@@ -14,5 +14,6 @@ public class StringBuilderTest {
         sb2.append("efg");
         sb2.append(true);
         System.out.println(sb2);
+        sb.setLength(0);
     }
 }
