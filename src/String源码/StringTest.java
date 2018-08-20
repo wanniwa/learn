@@ -15,9 +15,13 @@ public class StringTest {
         int indexOf = c.indexOf('c');
         System.out.println(indexOf);
 
+
         String e = "ABC";
         System.out.println(e.equalsIgnoreCase(a));
         System.out.println(e.startsWith("AB"));
         System.out.println(e.toLowerCase());
+
+        System.out.println(c.compareTo(a));
+
     }
 }
