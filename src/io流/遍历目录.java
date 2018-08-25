@@ -15,8 +15,9 @@ public class 遍历目录 {
         }
         System.out.println(src.getAbsolutePath());
         if (src.isDirectory()) {
-            if (src.listFiles().length>0) {
-                for (File sub : src.listFiles()) {
+            File[] files = src.listFiles();
+            if (files !=null) {
+                for (File sub : files) {
                     printName(sub);
                 }
             }
