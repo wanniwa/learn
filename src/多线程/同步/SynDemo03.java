@@ -6,16 +6,14 @@ package 多线程.同步;
  */
 public class SynDemo03 {
     public static void main(String[] args) {
-        char ch = 'a';
-        System.out.println((char) (ch-32));
-        // Object o = new Object();
-        // Object o2 = new Object();
-        // Test test = new Test(o,o2);
-        // Test2 test2 = new Test2(o,o2);
-        // Thread proxy = new Thread(test);
-        // Thread proxy1 = new Thread(test2);
-        // proxy.start();
-        // proxy1.start();
+        Object o = new Object();
+        Object o2 = new Object();
+        Test test = new Test(o,o2);
+        Test2 test2 = new Test2(o,o2);
+        Thread proxy = new Thread(test);
+        Thread proxy1 = new Thread(test2);
+        proxy.start();
+        proxy1.start();
     }
 }
 
