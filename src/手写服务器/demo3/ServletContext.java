@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServletContext {
-    //为每个servlet取一个别名
-    private Map<String, Servlet> servlet;
+    //为每个servlet取一个别名 存报名类名完整路径
+    private Map<String, String> servlet;
     //为url --->login
     private Map<String, String> mapping;
 
@@ -14,11 +14,11 @@ public class ServletContext {
         mapping = new HashMap<>();
     }
 
-    public Map<String, Servlet> getServlet() {
+    public Map<String, String> getServlet() {
         return servlet;
     }
 
-    public void setServlet(Map<String, Servlet> servlet) {
+    public void setServlet(Map<String, String> servlet) {
         this.servlet = servlet;
     }
 

@@ -1,5 +1,7 @@
 package 手写服务器.demo3;
 
+import 网络编程.TCP.chat.demo03.CloseUtil;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -123,5 +125,7 @@ public class Request {
     public String getUrl() {
         return url;
     }
-
+    public  void close(){
+        CloseUtil.closeAll(is);
+    }
 }
