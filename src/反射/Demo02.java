@@ -1,5 +1,6 @@
 package 反射;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -25,10 +26,23 @@ public class Demo02 {
                 System.out.println("属性"+field);
             }
             Method[] methods = aClass.getMethods();
+            Method getName1 = aClass.getDeclaredMethod("getName");
+            // Method getName1 = aClass.getDeclaredMethod("getName",参数 String.class);
+            System.out.println(getName1);
+            for (Method method : methods) {
+                System.out.println("方法"+method);
+            }
+            //获得所有的构造对象
+            Constructor<?>[] declaredConstructors = aClass.getDeclaredConstructors();
+            for (Constructor<?> declaredConstructor : declaredConstructors) {
+                System.out.println(declaredConstructor);
+            }
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
