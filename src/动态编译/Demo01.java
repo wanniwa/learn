@@ -30,7 +30,6 @@ public class Demo01 {
             //m.invoke(null, (Object)new String[]{});会编译成:m.invoke(null,"aa","bb"),就发生了参数个数不匹配的问题。
             //因此，必须要加上(Object)转型，避免这个问题。
             //public static void main(String[] args)
-
         } catch (Exception e) {
             e.printStackTrace();
         }
