@@ -6,7 +6,7 @@ public class Start {
         Thread proxy = new Thread(programmer);
         proxy.start();
         for (int i = 0; i < 1000; i++) {
-            System.out.println("一遍聊QQ");
+            System.out.println("一边聊QQ");
         }
     }
 }

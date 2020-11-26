@@ -1,4 +1,4 @@
-package 多线程.方法一继承Thread;
+package 多线程.方法一Thread;
 
 public class Tortoise extends Thread {
     @Override

@@ -1,12 +1,12 @@
 package 多线程.线程操作;
 
-public class JoinDemo01 extends Thread {
+public class JoinDemo extends Thread {
     public static void main(String[] args) throws InterruptedException {
-        JoinDemo01 joinDemo01 = new JoinDemo01();
-        joinDemo01.start();
+        JoinDemo joinDemo = new JoinDemo();
+        joinDemo.start();
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
-                joinDemo01.join();
+                joinDemo.join();
             }
             System.out.println("main"+i);
         }
