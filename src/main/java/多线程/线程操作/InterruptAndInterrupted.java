@@ -9,11 +9,6 @@ public class InterruptAndInterrupted {
         Thread t = new Thread(() -> {
             while (true) {
                 System.out.println(Thread.currentThread().isInterrupted());
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 if (Thread.interrupted()) {
                     System.out.println("Thread is interrupted!");
                     break;
@@ -21,7 +16,7 @@ public class InterruptAndInterrupted {
             }
         });
         t.start();
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(2001);
         t.interrupt();
     }
 }
