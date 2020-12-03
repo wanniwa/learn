@@ -18,7 +18,6 @@ public class ThreadState {
         t1.start();
         t1.join();
         System.out.println("3:"+t1.getState());
-        //
         System.out.println("------------------------t1结束------------------------------");
 
         System.out.println("------------------------t2开始------------------------------");
@@ -71,5 +70,13 @@ public class ThreadState {
         System.out.println("7:"+t4.getState());
         t4.join();
         System.out.println("------------------------t4结束------------------------------");
+        System.out.println("------------------------t5开始------------------------------");
+        Thread t5 = new Thread(LockSupport::park);
+        t5.start();
+        SleepHelper.sleepSeconds(1);
+        System.out.println("8:"+t5.getState());
+        LockSupport.unpark(t5);
+        System.out.println("------------------------t5结束------------------------------");
+
     }
 }
