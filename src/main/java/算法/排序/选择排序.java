@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class 选择排序 {
     public static void main(String[] args) {
         int[] arr = {7, 10, 12, 3, 9, 5};
-        sort(arr);
+        sort1(arr);
         System.out.println(Arrays.toString(arr));
 
     }
@@ -26,6 +26,21 @@ public class 选择排序 {
                 int tmp = arr[i];
                 arr[i] = arr[min];
                 arr[min] = tmp;
+            }
+        }
+    }
+
+    private static void sort1(int[] arr) {
+        // 选出一个数要和每个元素比较找出最小数，所以比较次数是n-1
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < min) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                arr[i] = arr[min];
             }
         }
     }
