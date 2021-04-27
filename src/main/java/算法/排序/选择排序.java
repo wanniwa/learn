@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class 选择排序 {
     public static void main(String[] args) {
         int[] arr = {7, 10, 12, 3, 9, 5};
-        sort1(arr);
+        sort(arr);
         System.out.println(Arrays.toString(arr));
 
     }
@@ -30,18 +30,20 @@ public class 选择排序 {
         }
     }
 
-    private static void sort1(int[] arr) {
-        // 选出一个数要和每个元素比较找出最小数，所以比较次数是n-1
-        for (int i = 0; i < arr.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < min) {
-                    min = j;
+    public static void selectSort(int[] array) {
+
+        //[1]使用外层循环指定标记位，然后将待排序序列中的元素一个一个的和标记位上的值进行比较，反序则互换；比较依然是进行n-1次即可
+        for(int i = 0; i < array.length-1; i++) {
+            //[2]使用内层循环j循环倒序遍历整个待排序序列，使用array[j]和标准位的array[i]进行大小比较
+            for(int j = array.length-1; j > i; j--) {
+                //[3]标准位上的元素和待排序序列中的元素进行比较，反序则互换
+                if(array[i] > array[j]) {
+                    int tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
                 }
             }
-            if (min != i) {
-                arr[i] = arr[min];
-            }
         }
+
     }
 }
